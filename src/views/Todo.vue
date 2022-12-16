@@ -1,7 +1,7 @@
 <template>
   <v-layout>
     <v-card contextual-style="dark">
-      <span slot="header"> My Account </span>
+      <span slot="header"> Todo </span>
       <div slot="body">
         <ul class="list-group" v-if="todos.length > 0">
           <li
@@ -33,7 +33,7 @@
             <input
               type="text"
               class="form-control"
-              placeholder="Your Task"
+              placeholder="Your Todo"
               name="task"
               v-model="todo"
             />

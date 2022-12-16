@@ -27,6 +27,16 @@ export default [
       auth: true,
     },
   },
+  {
+    path: "/app",
+    name: "client",
+    component: () => import("@/views/Client.vue"),
+
+    // If the user needs to be authenticated to view this page
+    meta: {
+      auth: true,
+    },
+  },
 
   // Account
   {

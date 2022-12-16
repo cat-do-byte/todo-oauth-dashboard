@@ -20,12 +20,20 @@
             <a class="nav-link"> Home </a>
           </router-link>
           <router-link
-            :to="{ name: 'account.index' }"
+            :to="{ name: 'todo' }"
             active-class="active"
             class="nav-item"
             tag="li"
           >
-            <a class="nav-link"> Account </a>
+            <a class="nav-link"> Todo </a>
+          </router-link>
+          <router-link
+            :to="{ name: 'client' }"
+            active-class="active"
+            class="nav-item"
+            tag="li"
+          >
+            <a class="nav-link"> App (ClientID) </a>
           </router-link>
         </ul>
         <span class="navbar-text">

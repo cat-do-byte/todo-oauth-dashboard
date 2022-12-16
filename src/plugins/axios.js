@@ -15,12 +15,13 @@ import Axios from "axios";
 Axios.defaults.baseURL = process.env.VUE_APP_API_LOCATION;
 Axios.defaults.headers.common.Accept = "application/json";
 Axios.interceptors.response.use(
-  response => response,
-  error => {
+  (response) => response.data,
+  (error) => {
+    console.log("error:::", error.response);
     if (error.response.status === 401) {
     }
 
-    return Promise.reject(error);
+    return Promise.reject(error.response.data);
   }
 );
 
@@ -29,5 +30,5 @@ Vue.$http = Axios;
 Object.defineProperty(Vue.prototype, "$http", {
   get() {
     return Axios;
-  }
+  },
 });

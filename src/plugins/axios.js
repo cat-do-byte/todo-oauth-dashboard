@@ -14,6 +14,14 @@ import Axios from "axios";
 
 Axios.defaults.baseURL = process.env.VUE_APP_API_LOCATION;
 Axios.defaults.headers.common.Accept = "application/json";
+
+Axios.interceptors.request.use((config) => {
+  const token = localStorage.getItem("todo-token");
+  if (token) config.headers.authorization = `Bearer ${token}`;
+
+  return config;
+});
+
 Axios.interceptors.response.use(
   (response) => response.data,
   (error) => {

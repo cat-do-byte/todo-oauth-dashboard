@@ -100,10 +100,6 @@ export default {
           alert("Cannot get token login");
           console.log("Cannot get token login");
         }
-
-        setTimeout(() => {
-          // this.$router.push("Home");
-        }, 1500);
       } catch (err) {
         console.log(err.error);
         alert(err.error);

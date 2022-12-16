@@ -14,8 +14,18 @@ export default [
 
     // If the user needs to be authenticated to view this page
     meta: {
-      auth: true
-    }
+      auth: true,
+    },
+  },
+  {
+    path: "/todo",
+    name: "todo",
+    component: () => import("@/views/Todo.vue"),
+
+    // If the user needs to be authenticated to view this page
+    meta: {
+      auth: true,
+    },
   },
 
   // Account
@@ -26,8 +36,8 @@ export default [
 
     // If the user needs to be authenticated to view this page.
     meta: {
-      auth: true
-    }
+      auth: true,
+    },
   },
 
   // Login
@@ -38,8 +48,8 @@ export default [
 
     // If the user needs to be a guest to view this page.
     meta: {
-      guest: true
-    }
+      guest: true,
+    },
   },
 
   // Register
@@ -50,17 +60,17 @@ export default [
 
     // If the user needs to be a guest to view this page.
     meta: {
-      guest: true
-    }
+      guest: true,
+    },
   },
 
   {
     path: "/",
-    redirect: "/home"
+    redirect: "/home",
   },
 
   {
     path: "/*",
-    redirect: "/home"
-  }
+    redirect: "/home",
+  },
 ];

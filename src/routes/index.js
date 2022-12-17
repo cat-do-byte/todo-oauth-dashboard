@@ -37,6 +37,16 @@ export default [
       auth: true,
     },
   },
+  {
+    path: "/oauth",
+    name: "oAuth",
+    component: () => import("@/views/OAuth.vue"),
+
+    // If the user needs to be authenticated to view this page
+    meta: {
+      auth: true,
+    },
+  },
 
   // Account
   {

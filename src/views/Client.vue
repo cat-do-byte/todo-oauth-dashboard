@@ -78,7 +78,6 @@ export default {
   methods: {
     async createClient() {
       if (this.client.trim() === "" || this.redirectUris.trim() === "") {
-        alert("Client name and Callback Uri can not be empty");
         return false;
       }
       const newClientApp = await this.$http.post("/clients", {

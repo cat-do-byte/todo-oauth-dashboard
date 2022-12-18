@@ -15,7 +15,7 @@
           >
             <div class="d-flex w-100 justify-content-between">
               <h5 class="mb-1">{{ client.name }}</h5>
-              <small>3 days ago</small>
+              <!-- <small>3 days ago</small> -->
             </div>
             <small><b>Client ID : </b>{{ client.clientId }}</small>
 

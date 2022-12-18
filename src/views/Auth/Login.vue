@@ -94,7 +94,16 @@ export default {
           localStorage.setItem("todo-token", result.token);
           this.loggedIn = true;
           setTimeout(() => {
-            this.$router.push("/");
+            // redirect
+
+            const routeQuery = this.$route.query;
+            /*   console.log(route);
+      if(routeQuery.) */
+            const redirectPage = routeQuery.redirect
+              ? routeQuery.redirect
+              : "/";
+            console.log("redirectPage::", redirectPage);
+            this.$router.push(redirectPage);
           }, 1500);
         } else {
           alert("Cannot get token login");

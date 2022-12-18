@@ -86,6 +86,13 @@ export default {
       window.history.back();
     }
 
+    // redirect if not login
+    const currentUserToken = localStorage.getItem("todo-token");
+    if (!currentUserToken) {
+      this.$router.push("/login?redirect=" + this.$route.fullPath);
+      return false;
+    }
+
     try {
       const result = await this.$http.post("/clients/get-client", { clientId });
       this.client.name = result.name;

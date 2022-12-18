@@ -11,7 +11,10 @@
                   Want to access your account with permission :
                 </footer>
               </blockquote>
-              <p class="card-text mb-5">+ Read</p>
+              <p class="card-text mb-5">
+                <span class="badge badge-warning">Read all Todo</span><br />
+                <span class="badge badge-warning">Create new Todo</span>
+              </p>
               <div class="w-100 pb-1"></div>
               <div class="d-flex align-items-center align-self-end">
                 <div class="m-2">

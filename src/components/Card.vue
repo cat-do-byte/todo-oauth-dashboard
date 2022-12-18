@@ -1,21 +1,12 @@
 <template>
   <div class="card">
-    <h4
-      v-if="hasSlot('header')"
-      :class="classNamesHeader"
-    >
-      <slot name="header" />
-    </h4>
-    <div
-      v-if="hasSlot('body')"
-      class="card-body"
-    >
+    <div v-if="hasSlot('body')" class="card-body">
+      <h4 v-if="hasSlot('header')" class="card-title">
+        <slot name="header" />
+      </h4>
       <slot name="body" />
     </div>
-    <div
-      v-if="hasSlot('footer')"
-      class="card-footer"
-    >
+    <div v-if="hasSlot('footer')" class="card-footer">
       <slot name="footer" />
     </div>
   </div>
@@ -31,27 +22,25 @@
  * Gives an idea how components work.
  */
 
-import SlotMixin from '@/mixins/slot';
+import SlotMixin from "@/mixins/slot";
 
 export default {
   /**
    * The name of the component.
    */
-  name: 'Card',
+  name: "Card",
 
   /**
    * The mixins that the component can use.
    */
-  mixins: [
-    SlotMixin,
-  ],
+  mixins: [SlotMixin],
 
   /**
    * The properties that the component accepts.
    */
   props: {
     contextualStyle: {
-      default: 'primary',
+      default: "primary",
       type: String,
       required: false,
     },
@@ -68,13 +57,13 @@ export default {
      * @returns {Array} The classes for the header.
      */
     classNamesHeader() {
-      const classNames = ['card-header'];
+      const classNames = ["card-header"];
 
       if (this.contextualStyle) {
         classNames.push(`bg-${this.contextualStyle}`);
-        classNames.push('text-white');
+        classNames.push("text-white");
       } else {
-        classNames.push('bg-default');
+        classNames.push("bg-default");
       }
 
       return classNames;
@@ -82,3 +71,11 @@ export default {
   },
 };
 </script>
+<style scoped>
+.card-title {
+  color: #8d448b;
+}
+.card-footer {
+  background: #fff;
+}
+</style>

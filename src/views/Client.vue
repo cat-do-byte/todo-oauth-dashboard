@@ -47,7 +47,7 @@
             />
           </div>
           <div class="col col-3">
-            <span class="btn btn-block btn-success" @click="createClient"
+            <span class="btn btn-block btn-primary" @click="createClient"
               >Create</span
             >
           </div>

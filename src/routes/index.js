@@ -63,7 +63,7 @@ export default [
   // Login
   {
     path: "/login",
-    name: "login.index",
+    name: "login",
     component: () => import("@/views/Auth/Login.vue"),
 
     // If the user needs to be a guest to view this page.
@@ -75,7 +75,7 @@ export default [
   // Register
   {
     path: "/register",
-    name: "register.index",
+    name: "register",
     component: () => import("@/views/Auth/Register.vue"),
 
     // If the user needs to be a guest to view this page.

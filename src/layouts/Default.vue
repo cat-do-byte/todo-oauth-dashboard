@@ -2,7 +2,7 @@
   <div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <router-link :to="{ name: 'home.index' }" class="navbar-brand">
-        Vue 2 Boilerplate
+        Todo Dashboard
       </router-link>
 
       <button class="navbar-toggler" type="button" @click="toggleMenu">
@@ -20,6 +20,7 @@
             <a class="nav-link"> Home </a>
           </router-link>
           <router-link
+            v-show="isLoggedIn"
             :to="{ name: 'todo' }"
             active-class="active"
             class="nav-item"
@@ -28,6 +29,7 @@
             <a class="nav-link"> Todo </a>
           </router-link>
           <router-link
+            v-show="isLoggedIn"
             :to="{ name: 'client' }"
             active-class="active"
             class="nav-item"
@@ -35,12 +37,31 @@
           >
             <a class="nav-link"> App (ClientID) </a>
           </router-link>
+
+          <router-link
+            v-show="!isLoggedIn"
+            :to="{ name: 'login' }"
+            class="nav-item"
+            tag="li"
+          >
+            <a class="nav-link"> Login </a>
+          </router-link>
+
+          <router-link
+            v-show="!isLoggedIn"
+            :to="{ name: 'register' }"
+            class="nav-item"
+            tag="li"
+          >
+            <a class="nav-link"> Register </a>
+          </router-link>
         </ul>
-        <span class="navbar-text">
-          <a class="btn btn-secondary" href="#" @click.prevent="logout">
-            <i class="fa fa-sign-out" />
+        <!-- <span class="navbar-text">
+          <a class="nav-link" v-show="!isLoggedIn" href="/login"> Login </a>
+          <a class="nav-link" v-show="!isLoggedIn" href="/register">
+            Register
           </a>
-        </span>
+        </span> -->
       </div>
     </nav>
 
@@ -80,6 +101,7 @@ export default {
   data() {
     return {
       menuCollapsed: false,
+      isLoggedIn: localStorage.getItem("todo-token") !== null,
     };
   },
 
@@ -93,3 +115,8 @@ export default {
   },
 };
 </script>
+<style scoped>
+.bg-dark {
+  background: #8d448b !important;
+}
+</style>

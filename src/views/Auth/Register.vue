@@ -26,7 +26,9 @@
             v-model="user.password"
           />
         </div>
-
+        <p class="text-center">
+          If you have account <a href="/login"> Login </a>
+        </p>
         <div class="form-group">
           <span
             id="login"

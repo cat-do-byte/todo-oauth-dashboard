@@ -89,7 +89,11 @@ export default {
       const data = await this.$http.get("/todo");
       this.todos = data;
     } catch (err) {
-      alert(err.error);
+      alert(
+        "Error: " +
+          err.error +
+          " ( try clear todo-token in localStorage if error about authenticate)"
+      );
     }
   },
 };
